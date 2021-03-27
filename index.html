@@ -116,6 +116,31 @@
         <li>Sending user input (which can contain unknown characters), POST is more robust and secure than GET.</li>
     </ol>
 
+    <h3>GET Requests</h3>
+    <p>simple GET request</p>
+
+    <h2>The XMLHttpRequest Object</h2>
+
+    <button type="button" onclick="loadDoc()">Request data</button>
+
+    <p id="demo"></p>
+
+    <script>
+    function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("demo").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "demo_get.asp", true);
+        xhttp.send();
+    }
+    </script>
+
+
+
+
 
 
 
