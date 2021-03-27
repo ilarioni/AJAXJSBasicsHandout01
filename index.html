@@ -65,6 +65,30 @@
     <p>All modern browsers support the XMLHttpRequest object.</p>
     <p>The XMLHttpRequest object can be used to exchange data with a web server behind the scenes. This means that it is possible to update parts of a web page, without reloading the whole page.</p>
 
+    <h3>Create an XMLHttpRequest Object</h3>
+    <p>All modern browsers (Chrome, Firefox, IE7+, Edge, Safari, Opera) have a built-in XMLHttpRequest object.</p>
+
+    <p>example</p>
+    <h2>The XMLHttpRequest Object</h2>
+
+    <p id="demo">Let AJAX change this text.</p>
+
+    <button type="button" onclick="loadDoc()">Change Content</button>
+
+    <script>
+    function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("demo").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "ajax_info.txt", true);
+        xhttp.send();
+    }
+    </script>
+
+
 
 
 
