@@ -169,6 +169,29 @@
     <p>The async parameter of the open() method should be set to true:</p>
 
     <h3>3 - The onreadystatechange Property</h3>
+    <p>With the XMLHttpRequest object you can define a function to be executed when the request receives an answer.</p>
+    <p>The function is defined in the onreadystatechange property of the XMLHttpRequest object:</p>
+
+    <div id="demo">
+    <h2>The XMLHttpRequest Object</h2>
+    <button type="button" onclick="loadDoc()">Change Content</button>
+    </div>
+        
+    <script>
+    function loadDoc() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("demo").innerHTML =
+              this.responseText;
+            }
+        };
+        xhttp.open("GET", "ajax_info.txt", true);
+        xhttp.send();
+    }
+    </script>
+
+    
 
 
 
