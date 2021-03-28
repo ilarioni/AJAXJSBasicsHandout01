@@ -191,7 +191,27 @@
     }
     </script>
 
-    
+    <h3>Synchronous Request</h3>
+    <p>To execute a synchronous request, change the third parameter in the open() method to false:</p>
+
+    <h2>The XMLHttpRequest Object</h2>
+
+    <p id="demo">Let AJAX change this text.</p>
+
+    <button type="button" onclick="loadDoc()">Change Content</button>
+
+    <script>
+    function loadDoc() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "ajax_info.txt", false);
+    xhttp.send();
+    document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+    </script>
+
+
+
+
 
 
 
