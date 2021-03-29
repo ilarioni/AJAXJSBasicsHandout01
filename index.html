@@ -431,6 +431,18 @@
     }
     </script>
 
+    <p>Code explanation:</p>
+    <p>First, check if the input field is empty (str.length == 0). If it is, clear the content of the txtHint placeholder and exit the function.</p>
+
+    <p>However, if the input field is not empty, do the following:</p>
+    <ol>
+        <li>Create an XMLHttpRequest object</li>
+        <li>Create the function to be executed when the server response is ready</li>
+        <li>Send the request off to a PHP file (gethint.php) on the server</li>
+        <li>Notice that q parameter is added gethint.php?q="+str</li>
+        <li>The str variable holds the content of the input field</li>
+    </ol>
+
 
 
 
