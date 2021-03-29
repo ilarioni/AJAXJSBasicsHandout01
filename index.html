@@ -452,7 +452,27 @@
     ?>
     -->
 
-    <h1></h1>
+    <h1>AJAX ASP Example</h1>
+    <p>The following example will demonstrate how a web page can communicate with a web server while a user type characters in an input field:</p>
+
+    <script>
+    function showHint(str) {
+        if (str.length == 0) {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+        } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("txtHint").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("GET", "gethint.asp?q=" + str, true);
+        xmlhttp.send();
+        }
+    }
+    </script>
+
 
 
 
